@@ -1,10 +1,11 @@
-import express from 'express'
-import bodyParser from 'body-parser'
-import config from 'config'
-import mongoose from 'mongoose'
-import cors from 'cors'
-import postRoutes from './routes/posts.js'
-import userRoutes from './routes/users.js'
+const express = require('express')
+const bodyParser = require('body-parser')
+const config = require('config')
+const mongoose = require('mongoose')
+const cors = require('cors')
+const postRoutes = require('./routes/posts.js')
+const userRoutes = require('./routes/users.js')
+const path = require('path')
 
 const app = express()
 
@@ -15,7 +16,6 @@ app.use('/posts', postRoutes)
 app.use('/user', userRoutes)
 
 if (process.env.NODE_ENV === 'production') {
-	console.log('process.env.NODE_ENV', process.env.NODE_ENV)
 	app.use('/', express.static(path.join(__dirname, 'client', 'build')))
 	app.get('*', (req, res) => {
 		res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
