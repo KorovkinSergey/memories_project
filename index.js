@@ -16,6 +16,7 @@ app.use('/posts', postRoutes)
 app.use('/user', userRoutes)
 
 if (process.env.NODE_ENV === 'production') {
+	console.log('process.env.NODE_ENV', process.env.NODE_ENV)
 	app.use('/', express.static(path.join(__dirname, 'client', 'build')))
 
 	app.get('*', (req, res) => {
