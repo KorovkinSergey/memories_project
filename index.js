@@ -3,7 +3,6 @@ import bodyParser from 'body-parser'
 import config from 'config'
 import mongoose from 'mongoose'
 import cors from 'cors'
-import path from 'path'
 import postRoutes from './routes/posts.js'
 import userRoutes from './routes/users.js'
 
@@ -18,7 +17,6 @@ app.use('/user', userRoutes)
 if (process.env.NODE_ENV === 'production') {
 	console.log('process.env.NODE_ENV', process.env.NODE_ENV)
 	app.use('/', express.static(path.join(__dirname, 'client', 'build')))
-
 	app.get('*', (req, res) => {
 		res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
 	})
