@@ -1,0 +1,6 @@
+{
+  "port": 5000,
+  "jwtSecret": "secret key",
+  "mongoUri": "mongodb+srv://javascriptmaster:javascriptmaster123@cluster0.ukwgn.mongodb.net/memories_project?retryWrites=true&w=majority",
+  "baseUrl": "http://localhost:5000"
+}
