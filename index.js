@@ -1,6 +1,6 @@
 import express from 'express'
 import bodyParser from 'body-parser'
-const config = require('config')
+import config from 'config'
 import mongoose from 'mongoose'
 import cors from 'cors'
 import postRoutes from './routes/posts.js'
